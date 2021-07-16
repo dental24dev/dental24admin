@@ -7,7 +7,7 @@ export const LAYOUT_WIDTH_FLUID = 'fluid';
 
 export const LAYOUT_WIDTH_BOXED = 'boxed';
 
-export const SIDEBAR_THEME_DEFAULT = 'vertical';
+export const SIDEBAR_THEME_DEFAULT = 'horizontal';
 
 export const SIDEBAR_THEME_DARK = 'dark';
 
