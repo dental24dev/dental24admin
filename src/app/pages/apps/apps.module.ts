@@ -13,11 +13,19 @@ import { TasksModule } from './tasks/tasks.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { CalendarComponent } from './calendar/calendar.component';
+import { DentistsComponent } from './dentists/dentists.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { PatientsComponent } from './patients/patients.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 
 @NgModule({
-    declarations: [CalendarComponent,ProjectsComponent,NewprojectComponent],
+    declarations: [
+    CalendarComponent,
+    ProjectsComponent,
+    PatientsComponent,
+    DentistsComponent,
+    NewprojectComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,

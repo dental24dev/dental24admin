@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 
  import { TixInterface } from '../models/tix-interface';
+ import { UserInterface } from '../models/user-interface';
 // import { SaleInterface } from '../models/sale-interface';
 import { OrderInterface } from '../models/order-interface';
 // import { InfoInterface } from '../models/info-interface';
@@ -17,6 +18,8 @@ export class DataApiService {
 	 orders: Observable<any>;
 	 tix: Observable<any>; 
 	 tixs: Observable<any>;
+	 user: Observable<any>; 
+	 users: Observable<any>;
 	// sale: Observable<any>;
 	order: Observable<any>;
   constructor(
@@ -35,20 +38,20 @@ export class DataApiService {
 	// 	.pipe(map(data => data));
 //}
 	getAllTixs(){
-		const url_api = 'hhttps://db.penguinscleaning.ca:3022/api/tixes?filter[where][status]=activated';
+		const url_api = 'hhttps://db.masterdent24.org:3032/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
 	}
  		getTamano(){
-	 	const url_api = 'https://db.penguinscleaning.ca:3022/api/order?filter[where][orderType]=appointment';
+	 	const url_api = 'https://db.masterdent24.org:3032/api/order?filter[where][orderType]=appointment';
 	 	return (this.orders = this.http.get(url_api));
 	 }
 	getAllQuotes(){
-		const url_api = 'https://db.penguinscleaning.ca:3022/api/order?filter[where][orderType]=appointment';
+		const url_api = 'https://db.masterdent24.org:3032/api/order?filter[where][orderType]=appointment';
 		return this.http.get(url_api);
 	}
 		saveTixFree(tix :TixInterface){
 	//	let token = this.authService.getToken();
-		const url_api='https://db.penguinscleaning.ca:3022/api/tixes';
+		const url_api='https://db.masterdent24.org:3032/api/tixes';
 		return this.http
 		.post<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
@@ -57,9 +60,17 @@ export class DataApiService {
 	// 	const url_api = 'https://db.buckapi.com:3025/api/tixes?filter[where][initload]=activated';
 	// 	return (this.tixs = this.http.get(url_api));
 	// }
- 		getAllTixsReturn(){
-		const url_api = 'https://db.penguinscleaning.ca:3022/api/tixes?filter[where][status]=activated';
+ 	getAllTixsReturn(){
+		const url_api = 'https://db.masterdent24.org:3032/api/tixes?filter[where][status]=activated';
 		return (this.tixs = this.http.get(url_api));
+	}
+	getAllDentistsReturn(){
+		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=activated';
+		return (this.users = this.http.get(url_api));
+	}	
+	getAllPatientsReturn(){
+		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=activated';
+		return (this.users = this.http.get(url_api));
 	}
 
 	// getAllTixsInitload(){
@@ -84,7 +95,7 @@ export class DataApiService {
 		.pipe(map(data => data));
 	}
 // sendMailNewBookAppToAdmin(book){
-// 		const url_api='https://email.penguinscleaning.ca:3005/newBookAppToAdmin';
+// 		const url_api='https://email.masterdent24.org:3005/newBookAppToAdmin';
 // 		return this.http
 // 		.post(url_api, book)
 // 		.pipe(map(data => data));
