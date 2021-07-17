@@ -42,7 +42,7 @@ export class DentistsComponent implements OnInit {
 
   ngOnInit() {
          this.getAllDentists();
-    this.breadCrumbItems = [{ label: 'Projects', active: true }];
+    this.breadCrumbItems = [{ label: 'Dentistas', active: true }];
 
     /**
      * Fetches the data
