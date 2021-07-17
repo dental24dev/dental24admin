@@ -69,7 +69,7 @@ export class DataApiService {
 		return (this.users = this.http.get(url_api));
 	}	
 	getAllPatientsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=new';
+		const url_api = 'https://db.masterdent24.org:3032/api/patient?filter[where][status]=new';
 		return (this.users = this.http.get(url_api));
 	}
 
