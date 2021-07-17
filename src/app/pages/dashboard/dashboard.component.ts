@@ -27,20 +27,32 @@ export class DashboardComponent implements OnInit {
   targetsBarChart: ChartType;
   salesDonutChart: ChartType;
   ordersData: OrdersTable[];
-  public getTamano(){
+  public getTamanoPatient(){
     this.dataApiService
-    .getTamano()
+    .getTamanoPatient()
     .subscribe((res:any) => {
       if (res[0] === undefined){
         return
         }else{
-         this._uw.totalOrders = res.length;
-         this._uw.ordersA=res;
+         this._uw.totalPatients = res.length;
+         this._uw.patientsA=res;
+        }
+      });
+  }public getTamanoDentist(){
+    this.dataApiService
+    .getTamanoDentist()
+    .subscribe((res:any) => {
+      if (res[0] === undefined){
+        return
+        }else{
+         this._uw.totalDentists = res.length;
+         this._uw.dentitsA=res;
         }
       });
   }
   ngOnInit() {
-  this.getTamano();
+  this.getTamanoPatient();
+  this.getTamanoDentist();
     /**
      * Fetches the data
      */

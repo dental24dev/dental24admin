@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 
  import { TixInterface } from '../models/tix-interface';
  import { UserInterface } from '../models/user-interface';
+ import { DentistInterface } from '../models/dentist-interface';
+ import { PatientInterface } from '../models/patient-interface';
 // import { SaleInterface } from '../models/sale-interface';
 import { OrderInterface } from '../models/order-interface';
 // import { InfoInterface } from '../models/info-interface';
@@ -20,6 +22,10 @@ export class DataApiService {
 	 tixs: Observable<any>;
 	 user: Observable<any>; 
 	 users: Observable<any>;
+	  dentist: Observable<any>; 
+	 dentists: Observable<any>;
+	 patient: Observable<any>; 
+	 patients: Observable<any>;
 	// sale: Observable<any>;
 	order: Observable<any>;
   constructor(
@@ -41,9 +47,13 @@ export class DataApiService {
 		const url_api = 'hhttps://db.masterdent24.org:3032/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
 	}
- 		getTamano(){
-	 	const url_api = 'https://db.masterdent24.org:3032/api/order?filter[where][orderType]=appointment';
-	 	return (this.orders = this.http.get(url_api));
+ 		getTamanoDentist(){
+	 	const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=new';
+	 	return (this.dentists = this.http.get(url_api));
+	 }
+ 		getTamanoPatient(){
+	 	const url_api = 'https://db.masterdent24.org:3032/api/patient?filter[where][status]=new';
+	 	return (this.patients = this.http.get(url_api));
 	 }
 	getAllQuotes(){
 		const url_api = 'https://db.masterdent24.org:3032/api/order?filter[where][orderType]=appointment';

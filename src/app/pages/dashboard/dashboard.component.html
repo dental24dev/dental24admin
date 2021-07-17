@@ -54,13 +54,13 @@
     <div class="col-xl-3">
       <div class="card">
         <div class="card-body p-0">
-          <h5 class="card-title header-title border-bottom p-3 mb-0">Resumen</h5>
+          <h5 class="card-title header-title border-bottom p-3 mb-0" *ngIf="_uw.totalPatients!==undefined && _uw.totalDentists!==undefined">Resumen</h5>
           <!-- Overview data -->
           <app-overview value='0' icon='users' title="Total de visitantes" classNames="px-3 py-4">
           </app-overview>
-          <app-overview value='0' icon='image' title="Pasientes registrados" classNames="px-3 py-4">
+          <app-overview value='{{_uw.totalPatients}}' icon='image' title="Pasientes registrados" classNames="px-3 py-4">
           </app-overview>
-          <app-overview value='0' icon='shopping-bag' title="Solicitudes de cuenta" classNames="px-3 py-4"></app-overview>
+          <app-overview value='{{_uw.totalDentists}}' icon='shopping-bag' title="Solicitudes de cuenta" classNames="px-3 py-4"></app-overview>
         </div>
       </div>
     </div>

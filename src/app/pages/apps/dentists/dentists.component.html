@@ -52,6 +52,7 @@
               <thead>
                 <tr>
             <!--       <th scope="col">#</th> -->
+                  <th scope="col">Nombre de usuario</th>
                   <th scope="col">Nombre</th>
                 <!--   <th scope="col">Customer</th>
                   <th scope="col">Price</th> -->
@@ -62,6 +63,7 @@
               <tbody>
                 <tr *ngFor="let user of users" >
                   <!-- <td>{{ table.id }}</td> -->
+                  <td>{{ user.username }}</td>
                   <td>{{ user.name }}{{user.surname}}</td>
                  <!--  <td>{{ table.name }}</td>
                   <td>{{ table.price }}</td> -->

@@ -46,6 +46,8 @@ export class UserWService {
 	name:string;
 	numProd:number=0;
 	order:any={};
+	dentitsA:any={};
+	patientsA:any={};
 	orderPro:any={};
 	pagoImage:any[]=[];
 	pedido:any={};
@@ -66,6 +68,8 @@ export class UserWService {
 	totalDiscount:number=0;
 	totalNew:number=0;
 	totalProducts:number=0;
+	totalPatients:number=0;
+	totalDentists:number=0;
 	totalTixs:number;
 	totalOrders:number;
 	type:string;
