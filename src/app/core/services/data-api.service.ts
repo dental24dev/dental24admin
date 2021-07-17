@@ -65,11 +65,11 @@ export class DataApiService {
 		return (this.tixs = this.http.get(url_api));
 	}
 	getAllDentistsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=activated';
+		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=new';
 		return (this.users = this.http.get(url_api));
 	}	
 	getAllPatientsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=activated';
+		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=new';
 		return (this.users = this.http.get(url_api));
 	}
 
