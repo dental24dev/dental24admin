@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
  import { TixInterface } from '../models/tix-interface';
  import { UserInterface } from '../models/user-interface';
  import { DentistInterface } from '../models/dentist-interface';
+ import { SpecInterface } from '../models/spec-interface';
  import { PatientInterface } from '../models/patient-interface';
 // import { SaleInterface } from '../models/sale-interface';
 import { OrderInterface } from '../models/order-interface';
@@ -19,6 +20,8 @@ export class DataApiService {
 	// info: Observable<any>;
 	 orders: Observable<any>;
 	 tix: Observable<any>; 
+	 spec: Observable<any>; 
+	 specs: Observable<any>; 
 	 tixs: Observable<any>;
 	 user: Observable<any>; 
 	 users: Observable<any>;
@@ -75,8 +78,12 @@ export class DataApiService {
 		return (this.tixs = this.http.get(url_api));
 	}
 	getAllDentistsReturn(){
-		const url_api = 'https://db.masterdent24.org:3032/api/dentist?filter[where][status]=new';
+		const url_api = 'https://db.masterdent24.org:3032/api/dentist';
 		return (this.users = this.http.get(url_api));
+	}	
+		getAllSpecs(){
+		const url_api = 'https://db.masterdent24.org:3032/api/specialties';
+		return (this.specs = this.http.get(url_api));
 	}	
 	getAllPatientsReturn(){
 		const url_api = 'https://db.masterdent24.org:3032/api/patient?filter[where][status]=new';
@@ -117,6 +124,13 @@ export class DataApiService {
 		.put<OrderInterface>(url_api, order)
 		.pipe(map(data => data));
 	}
+	getProfileById(id:string){
+		let indice = id;
+		const url_api=`https://db.masterdent24.org:3032/api/dentist/${indice}`;
+		this.dentist = this.http.get(url_api);
+		return (this.dentist);
+	}
+	
 	getOrderByNpedido(npedido: string){
 		const url_api = `https://db.buckapi.com:3025/api/order?filter[where][npedido]=${npedido}`;
 		this.order = this.http.get(url_api);

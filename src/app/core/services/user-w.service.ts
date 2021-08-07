@@ -66,6 +66,7 @@ export class UserWService {
 	total:number=0;
 	totalBooks:number;
 	totalDiscount:number=0;
+	totalSpecs:number=0;
 	totalNew:number=0;
 	totalProducts:number=0;
 	totalPatients:number=0;

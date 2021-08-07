@@ -3,6 +3,8 @@ export interface UserInterface{
 	name?:string;
 	usertype?:string;
 	address?:string;
+	status?:string;
 	especialidad?:string;
 	edad?:number;	
+	images?:Array<string>;
 }

@@ -52,8 +52,8 @@
               <thead>
                 <tr>
             <!--       <th scope="col">#</th> -->
-                  <th scope="col">Nombre</th>
                   <th scope="col">Nombre de usuario</th>
+                  <th scope="col">Nombre</th>
                 <!--   <th scope="col">Customer</th>
                   <th scope="col">Price</th> -->
                   <th scope="col">Estado de solicitud</th>
@@ -62,8 +62,13 @@
               <tbody>
                 <tr *ngFor="let user of users" >
                   <!-- <td>{{ table.id }}</td> -->
+                 <td>
+                    <div class="chat-avatar" >
+                     <img src="{{user.images[0]}}" style="width:32px;"> 
+                    {{ user.username }}
+                    </div> 
+                  </td>
                   <td>{{ user.name }}</td>
-                  <td>{{ user.username }}</td>
                  <!--  <td>{{ table.name }}</td>
                   <td>{{ table.price }}</td> -->
                   <td><span >{{user.status}}</span></td>

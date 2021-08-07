@@ -5,6 +5,7 @@ import { revenueAreaChart, targetsBarChart, salesDonutChart, ordersData } from '
 import { ChartType, OrdersTable } from './dentists.model';
 import { DataApiService } from '../../../core/services/data-api.service';
 import { UserInterface } from '../../../core/models/user-interface'; 
+import { SpecInterface } from '../../../core/models/spec-interface'; 
 import { UserWService } from "../../../core/services/user-w.service";
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
@@ -18,7 +19,11 @@ import { Router } from '@angular/router';
 
 export class DentistsComponent implements OnInit {
     public user:UserInterface;
-    public users:UserInterface;
+    public users:UserInterface;  
+      public spec:SpecInterface;
+    public specs:SpecInterface;
+    public newusers=0;
+    public registeredusers=0;
   breadCrumbItems: Array<{}>;
   constructor(  private dataApi: DataApiService,
     public _uw:UserWService,
@@ -30,17 +35,51 @@ export class DentistsComponent implements OnInit {
   targetsBarChart: ChartType;
   salesDonutChart: ChartType;
   ordersData: OrdersTable[];
+     
+ 
+
   getAllDentists(){
         this.dataApi.getAllDentistsReturn().subscribe((res:any) => {
       if (res[0] === undefined){
-        console.log("hey");
+
        }else{
-        this.users=res;            
+        this.users=res;  
+               this._uw.totalDentists=res.length;  
+        }
+     });  
+       
+
+ setTimeout(() => {
+
+  for(let i =0;i<this._uw.totalDentists;i++) {
+            if(this.users[i].status=="new"){
+              this.newusers=this.newusers+1;
+            }
+            else{
+              this.registeredusers=this.registeredusers+1;
+              
+            }
+          }
+       
+    }, 5000);
+
+          
+    }
+  
+
+
+      getAllSpecs(){
+        this.dataApi.getAllSpecs().subscribe((res:any) => {
+      if (res[0] === undefined){
+       }else{
+        this.specs=res;   
+           this._uw.totalSpecs=res.length;          
         }
      });  
     }
 
   ngOnInit() {
+         this.getAllSpecs();
          this.getAllDentists();
     this.breadCrumbItems = [{ label: 'Dentistas', active: true }];
 
