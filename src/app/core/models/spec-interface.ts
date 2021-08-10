@@ -1,5 +1,5 @@
 export interface SpecInterface{
-		id?:string;	
+	id?:string;	
 	name?:string;
 	idspec?:string;
 	filterStatus?:boolean;

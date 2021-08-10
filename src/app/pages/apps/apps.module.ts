@@ -14,6 +14,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { CalendarComponent } from './calendar/calendar.component';
 import { DentistsComponent } from './dentists/dentists.component';
+import { SettingsappComponent } from './settingsapp/settingsapp.component';
 import { DentistviewComponent } from './dentistview/dentistview.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PatientsComponent } from './patients/patients.component';
@@ -25,6 +26,7 @@ import { NewprojectComponent } from './newproject/newproject.component';
     ProjectsComponent,
     PatientsComponent,
     DentistsComponent,
+    SettingsappComponent,
     DentistviewComponent,
     NewprojectComponent
     ],

@@ -81,13 +81,13 @@ export class DataApiService {
 		const url_api = 'https://db.masterdent24.org:3032/api/dentist';
 		return (this.users = this.http.get(url_api));
 	}	
-		getAllSpecs(){
-		const url_api = 'https://db.masterdent24.org:3032/api/specialties';
-		return (this.specs = this.http.get(url_api));
-	}	
 	getAllPatientsReturn(){
 		const url_api = 'https://db.masterdent24.org:3032/api/patient?filter[where][status]=new';
 		return (this.users = this.http.get(url_api));
+	}
+	getAllSpecs(){
+		const url_api = 'https://db.masterdent24.org:3032/api/specialties';
+		return (this.specs = this.http.get(url_api));
 	}
 
 	// getAllTixsInitload(){

@@ -27,6 +27,11 @@ export const MENU: MenuItem[] = [
         label: 'Pacientes',
         icon: 'users',
         link: '/patients',
+    }, 
+    {
+        label: 'Ajustes de Aplicación',
+        icon: 'settings',
+        link: '/settingsapp',
     },    
     // {
     //     label: 'Email',

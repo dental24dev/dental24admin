@@ -5,6 +5,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { PatientsComponent } from './patients/patients.component';
 import { DentistsComponent } from './dentists/dentists.component';
 import { DentistviewComponent } from './dentistview/dentistview.component';
+import { SettingsappComponent } from './settingsapp/settingsapp.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: 'dentists',
         component: DentistsComponent
+    }, 
+    {
+        path: 'settingsapp',
+        component: SettingsappComponent
     },  
     {
         path: 'dentistview/:id',
