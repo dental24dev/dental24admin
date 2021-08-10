@@ -50,21 +50,20 @@ export class DentistsComponent implements OnInit {
        
 
  setTimeout(() => {
-
+if (this._uw.totalDentists>0){
   for(let i =0;i<this._uw.totalDentists;i++) {
-            if(this.users[i].status=="new"){
-              this.newusers=this.newusers+1;
-            }
-            else{
-              this.registeredusers=this.registeredusers+1;
-              
-            }
-          }
-       
-    }, 5000);
-
+      if(this.users[i].status=="new"){
+          this.newusers=this.newusers+1;
+        }
+        else{
+          this.registeredusers=this.registeredusers+1;
           
+        }
+      }
     }
+     
+  }, 2000);
+}
   
 
 
@@ -73,12 +72,15 @@ export class DentistsComponent implements OnInit {
       if (res[0] === undefined){
        }else{
         this.specs=res;   
-           this._uw.totalSpecs=res.length;          
+           this._uw.totalSpecs=res.length;   
+           this._uw.specs=res;       
         }
      });  
     }
 
   ngOnInit() {
+    
+    // this.users=this._uw.dentistsA;
          this.getAllSpecs();
          this.getAllDentists();
     this.breadCrumbItems = [{ label: 'Dentistas', active: true }];

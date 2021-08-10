@@ -22,7 +22,8 @@ export class DashboardComponent implements OnInit {
  public _uw:UserWService, 
     private dataApiService: DataApiService
     ) { }
-
+      public newusers=0;
+    public registeredusers=0;
   revenueAreaChart: ChartType;
   targetsBarChart: ChartType;
   salesDonutChart: ChartType;
@@ -46,7 +47,8 @@ export class DashboardComponent implements OnInit {
         return
         }else{
          this._uw.totalDentists = res.length;
-         this._uw.dentitsA=res;
+         this._uw.dentistsA=res;
+      
         }
       });
   }

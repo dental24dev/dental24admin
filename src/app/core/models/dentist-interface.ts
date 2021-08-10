@@ -19,6 +19,7 @@ export interface DentistInterface{
 	about?:string;
 	collegeN?:string;
 	images?:Array<string>;
+	specs?:Array<string>;
 }
 
 

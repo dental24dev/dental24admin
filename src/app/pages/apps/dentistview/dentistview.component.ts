@@ -33,7 +33,22 @@ export class DentistviewComponent implements OnInit {
         private route:ActivatedRoute,
     private router: Router
     ) { }
-    public dentist:DentistInterface;
+public dentist : DentistInterface ={
+    address:"",
+    collegeN:"",
+    clinicName:"",
+    images:[],
+    name:"",
+    password:"",
+    phone:"",
+    status:"",
+    specialty:"",
+    specs:[],
+    surname:"",
+    userd:"",
+    username:"",
+    usertype:""
+  };
     public dentists:DentistInterface;  
 
   ngOnInit() {

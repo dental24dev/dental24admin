@@ -42,12 +42,13 @@ export class UserWService {
 	isLogged:boolean=false;
 	loaded:boolean=false;
 	method:string;
-	moccs:boolean=false;
 	name:string;
+	newusers:number=0;
+	moccs:boolean=false;
 	numProd:number=0;
 	order:any={};
-	dentitsA:any={};
-	patientsA:any={};
+	dentistsA:any[]=[];
+	patientsA:any[]=[];
 	orderPro:any={};
 	pagoImage:any[]=[];
 	pedido:any={};
@@ -59,11 +60,13 @@ export class UserWService {
 	showAll:boolean=false;
 	subTotal:number=0;
 	tixs:any[]=[];
+
 	tixPreview:any={};
 	tixsOrigin:any[]=[];
 	tixsDiscount:any={};
 	tixsNew:any={};
-	total:number=0;
+	specs:any={};
+	total:number=0;	
 	totalBooks:number;
 	totalDiscount:number=0;
 	totalSpecs:number=0;
