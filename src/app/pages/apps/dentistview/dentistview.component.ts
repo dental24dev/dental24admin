@@ -62,7 +62,7 @@ public dentist : DentistInterface ={
     public dentists:DentistInterface;  
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Shreyu', path: '/' }, { label: 'Pages', path: '/' }, { label: 'Profile', active: true }];
+    this.breadCrumbItems = [ { label: 'Dentistas', path: '/' }, { label: 'Perfil del dentista', active: true }];
  this._fetchData();
     this.getProfile(this.route.snapshot.paramMap.get('id'));
   }

@@ -11,6 +11,7 @@ import { EmailModule } from './email/email.module';
 import { ProjectModule } from './project/project.module';
 import { TasksModule } from './tasks/tasks.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { NgbTabsetModule, NgbTooltipModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CalendarComponent } from './calendar/calendar.component';
 import { DentistsComponent } from './dentists/dentists.component';
@@ -40,6 +41,9 @@ import { NewspecialtyComponent } from './newspecialty/newspecialty.component';
         FullCalendarModule,
         AppsRoutingModule,
         UIModule,
+            NgbTabsetModule,
+        NgbTooltipModule,
+        NgbProgressbarModule,
         EmailModule,
         ProjectModule,
         TasksModule,
