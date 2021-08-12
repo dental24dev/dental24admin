@@ -6,7 +6,7 @@
            
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title mt-0 mb-1">Agregar Especialidad</h4>
+                    <!-- <h4 class="header-title mt-0 mb-1">Agregar Especialidad</h4> -->
                     <p class="text-muted font-13 m-b-30">
                         <!-- Drag and drop the project's images. -->
                     </p>
@@ -17,7 +17,7 @@
 
 
 
-              <label>Epecialidad</label>
+              <label>Especialidad</label>
               <input type="text" class="form-control" formControlName="name"
                 [ngClass]="{'is-invalid': typesubmit && type.name.errors}" placeholder="Especialidad" />
               <div *ngIf="typesubmit && type.name.errors" class="invalid-feedback">

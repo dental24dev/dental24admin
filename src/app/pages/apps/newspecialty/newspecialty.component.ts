@@ -93,7 +93,7 @@ public formBuilder: FormBuilder,
 
 
   ngOnInit() {this._uw.images=[];
-  this.breadCrumbItems = [ { label: 'Agregar especialidad', path: '/', active: true }];
+  this.breadCrumbItems = [];
       this.newSpecialty = this.formBuilder.group({
       name: ['', [Validators.required]]
         });
