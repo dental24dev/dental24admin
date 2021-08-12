@@ -27,12 +27,22 @@ export class DentistviewComponent implements OnInit {
   projectData: List[];
 
   constructor(
- private dataApi: DataApiService,
+    private dataApi: DataApiService,
     public _uw:UserWService,
     private location: Location,
-        private route:ActivatedRoute,
+    private route:ActivatedRoute,
     private router: Router
     ) { }
+
+    public activate(){
+    this.dentist.status="activated";
+      return this.dataApi.updateDentist(this.dentist, this.route.snapshot.paramMap.get('id'))
+        .subscribe(
+            dentist => this.router.navigate(['/dentists'])
+        );
+    }
+
+
 public dentist : DentistInterface ={
     address:"",
     collegeN:"",
@@ -52,15 +62,13 @@ public dentist : DentistInterface ={
     public dentists:DentistInterface;  
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Masterdent24', path: '/' }, { label: 'Dentistas', path: '/dentists' }, { label: 'Perfil', active: true }];
-
-    this._fetchData();
+    this.breadCrumbItems = [{ label: 'Shreyu', path: '/' }, { label: 'Pages', path: '/' }, { label: 'Profile', active: true }];
+ this._fetchData();
     this.getProfile(this.route.snapshot.paramMap.get('id'));
   }
-     getProfile(id: string){
-    this.dataApi.getProfileById(id).subscribe(dentist => (this.dentist = dentist));
-
-   
+  
+  getProfile(id: string){
+    this.dataApi.getProfileById(id).subscribe(dentist => (this.dentist = dentist)); 
   }
 
   /**

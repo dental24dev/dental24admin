@@ -124,6 +124,13 @@ export class DataApiService {
 		.put<OrderInterface>(url_api, order)
 		.pipe(map(data => data));
 	}
+	updateDentist(dentist :DentistInterface, id: string){
+		// let token = this.authService.getToken();
+		const url_api=`https://db.masterdent24.org:3032/api/dentist/${id}`;
+		return this.http
+		.put<DentistInterface>(url_api, dentist)
+		.pipe(map(data => data));
+	}
 	getProfileById(id:string){
 		let indice = id;
 		const url_api=`https://db.masterdent24.org:3032/api/dentist/${indice}`;

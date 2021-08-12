@@ -45,12 +45,7 @@ export class DentistsComponent implements OnInit {
        }else{
         this.users=res;  
                this._uw.totalDentists=res.length;  
-        }
-     });  
-       
-
- setTimeout(() => {
-if (this._uw.totalDentists>0){
+               if (this._uw.totalDentists>0){
   for(let i =0;i<this._uw.totalDentists;i++) {
       if(this.users[i].status=="new"){
           this.newusers=this.newusers+1;
@@ -61,6 +56,12 @@ if (this._uw.totalDentists>0){
         }
       }
     }
+        }
+     });  
+       
+
+ setTimeout(() => {
+
      
   }, 2000);
 }
