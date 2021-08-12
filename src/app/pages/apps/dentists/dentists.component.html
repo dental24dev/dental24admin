@@ -46,14 +46,14 @@
       <!--     <a routerLink="../newproject" class="btn btn-primary btn-sm float-right">
             <i class="uil uil-export ml-1"></i> New project
           </a> -->
-          <h5 class="card-title header-title mt-0 mb-0" style="color:#41bc3f;" [hidden]="newusers<1">Solicitudes de registro ({{newusers}})</h5>
+          <h5 class="card-title header-title mt-0 mb-0" style="color:#5872f8;" [hidden]="newusers<1">Solicitudes de registro ({{newusers}})</h5>
           <h5 class="card-title header-title mt-0 mb-0" [hidden]="newusers>0">Solicitudes de registro ({{newusers}})</h5>
           <div class="table-responsive mt-4" [hidden]="newusers==0">
             <table class="table table-hover table-nowrap mb-0">
               <thead>
                 <tr>
             <!--       <th scope="col">#</th> -->
-                  <th scope="col">Nombre</th>
+                  <th scope="col" >Nombre</th>
                   <th scope="col">Nombre de usuario</th>
                 <!--   <th scope="col">Customer</th>
                   <th scope="col">Price</th> -->
@@ -64,8 +64,8 @@
               <tbody>
                 <tr *ngFor="let user of users"  [hidden]="user.status!='new'"  routerLink="/dentistview/{{user.id}}" style="cursor: pointer;">
                   <!-- <td>{{ table.id }}</td> -->
-                  <td>{{ user.name }} {{user.surname}}</td>
-                  <td>{{ user.username }}</td>
+                  <td style="color:#5872f8;" >{{ user.name }} {{user.surname}}</td>
+                  <td style="color:#5872f8;" >{{ user.username }}</td>
                  <!--  <td>{{ table.name }}</td>
                   <td>{{ table.price }}</td> -->
             
