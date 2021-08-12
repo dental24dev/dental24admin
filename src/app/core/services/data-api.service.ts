@@ -69,6 +69,13 @@ export class DataApiService {
 		.post<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
 	}
+		saveSpec(spec :SpecInterface){
+	//	let token = this.authService.getToken();
+		const url_api='https://db.masterdent24.org:3032/api/specialties';
+		return this.http
+		.post<SpecInterface>(url_api, spec)
+		.pipe(map(data => data));
+	}
 	// getTamanoIni(){
 	// 	const url_api = 'https://db.buckapi.com:3025/api/tixes?filter[where][initload]=activated';
 	// 	return (this.tixs = this.http.get(url_api));

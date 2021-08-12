@@ -29,6 +29,7 @@ export class UserWService {
 	errorFormSendSale:boolean;
 	errorFormSendOrder:boolean;
 	errorFormPago:boolean;
+	errorFormAddSpec:boolean;
 	feet:number=0;
 	file:any[]=[];
 	filter:boolean=false;

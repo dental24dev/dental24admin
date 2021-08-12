@@ -7,6 +7,7 @@ import { DentistsComponent } from './dentists/dentists.component';
 import { DentistviewComponent } from './dentistview/dentistview.component';
 import { SettingsappComponent } from './settingsapp/settingsapp.component';
 import { NewprojectComponent } from './newproject/newproject.component';
+import { NewspecialtyComponent } from './newspecialty/newspecialty.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'newproject',
         component: NewprojectComponent
+    },
+    {
+        path: 'newspecialty',
+        component: NewspecialtyComponent
     },
     {
         path: 'dentists',

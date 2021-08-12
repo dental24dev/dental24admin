@@ -19,6 +19,7 @@ import { DentistviewComponent } from './dentistview/dentistview.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PatientsComponent } from './patients/patients.component';
 import { NewprojectComponent } from './newproject/newproject.component';
+import { NewspecialtyComponent } from './newspecialty/newspecialty.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { NewprojectComponent } from './newproject/newproject.component';
     DentistsComponent,
     SettingsappComponent,
     DentistviewComponent,
-    NewprojectComponent
+    NewprojectComponent,
+    NewspecialtyComponent
     ],
     imports: [
         CommonModule,

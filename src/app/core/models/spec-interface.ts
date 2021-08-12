@@ -1,4 +1,4 @@
-export interface SpecInterface{
+	export interface SpecInterface{
 	id?:string;	
 	name?:string;
 	idspec?:string;
